@@ -1,0 +1,27 @@
+<?php
+include "koneksi.php";
+$username = $_POST['username'];
+$password = $_POST['password'];
+if (empty($username)){
+    echo "<script>alert('Username Belum Diisi')</script>";
+    echo "<meta http-equiv='refresh' content='1 url=index.html'>";
+}
+else if (empty($password)){
+    echo "<script>alert('Password Belum Diisi')</script>";
+    echo "<meta http-equiv='refresh' content='1 url=index.html'>";
+}
+else{
+    session_start();
+    include "koneksi.php";
+    $login = mysql_query ("select * from tbl_login where (username='$_POST[username]') and (password='$_POST[password]')");
+    $rowcount=mysql_num_rows($login);
+    if($rowcount==1)
+    {
+        $_SESSION['username'] = $_POST['username'];
+        header("location:dashboard.php");
+    }else{
+    echo "<script>alert('Username atau Password Salah !!!')</script>";
+    echo "<meta http-equiv='refresh' content='1 url=index.html'>";
+}
+}
+?>
