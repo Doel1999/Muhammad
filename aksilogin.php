@@ -13,8 +13,8 @@ else if (empty($password)){
 else{
     session_start();
     include "koneksi.php";
-    $login = mysql_query ("select * from tbl_login where (username='$_POST[username]') and (password='$_POST[password]')");
-    $rowcount=mysql_num_rows($login);
+    $login = mysqli_query ("select * from tbl_login where (username='$_POST[username]') and (password='$_POST[password]')");
+    $rowcount=mysqli_num_rows($login);
     if($rowcount==1)
     {
         $_SESSION['username'] = $_POST['username'];
