@@ -1,7 +1,7 @@
 <?php
 include "koneksi.php";
-$update=mysql_query("SELECT * FROM opd WHERE nomor_polisi='$_GET[id]'");
-$kolom=mysql_fetch_array($update)
+$update=mysqli_query($koneksi,"SELECT * FROM opd WHERE nomor_polisi='$_GET[id]'");
+$kolom=mysqli_fetch_array($update)
 ?>
 
 

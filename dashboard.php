@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<?php
+include "session.php";		
+?>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -96,9 +99,9 @@
 						    </tr>
 							<?php
   								include "koneksi.php";
-  								$tampil=mysql_query("SELECT * FROM opd");
+  								$tampil=mysqli_query($koneksi,"SELECT * FROM opd");
   								$no=1;
-  								while ($kolom=mysql_fetch_array($tampil))
+  								while ($kolom=mysqli_fetch_array($tampil))
   								{
   							?>
   							<tr>

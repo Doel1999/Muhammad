@@ -27,8 +27,8 @@ $pdf->Cell(30,10,'Nama Pengguna',1,1);
 $pdf->SetFont('Arial','',8);
 
 include 'koneksi.php';
-$mahasiswa = mysql_query("select * from opd");
-while ($row = mysql_fetch_array($mahasiswa)){
+$mahasiswa = mysqli_query($koneksi,"select * from opd");
+while ($row = mysqli_fetch_array($mahasiswa)){
     $pdf->Cell(27,6,$row['opd_pengguna'],1,0);
     $pdf->Cell(24,6,$row['nomor_polisi'],1,0);
     $pdf->Cell(25,6,$row['nomor_rangka'],1,0);

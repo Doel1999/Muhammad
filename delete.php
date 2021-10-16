@@ -1,6 +1,6 @@
 <?php
 include "koneksi.php";
-$delete = mysql_query ("DELETE FROM opd WHERE nomor_polisi='$_GET[id]'");
+$delete = mysqli_query ($koneksi,"DELETE FROM opd WHERE nomor_polisi='$_GET[id]'");
 if($delete)
 {
 header ("location:dashboard.php");

@@ -1,5 +1,12 @@
 
 <!DOCTYPE html>
+<?php
+include "koneksi.php";
+//$query="SELECT id_jabatan,Jabatan from jabatan order by id_jabatan";
+$sql=mysqli_query($koneksi,"SELECT * from Jabatan");
+While ($kolom=mysqli_fetch_array($sql))
+	{echo "<option value='$kolom[id_jabatan]'>$kolom[Jabatan]</option>";}
+?>
 <html>
 <?php
 include "session.php";
@@ -97,7 +104,14 @@ include "session.php";
 								<input class="form-control" placeholder="OPD Pengguna" name="opd_pengguna" type="text" value="">
 							</div>
 							<div class="form-group">
-								<input class="form-control" placeholder="Jabatan Pengguna" name="jabatan_pengguna" type="text" value="">
+								<select name="jabatan_pengguna" id="jabatan_pengguna" width="1500">
+																			<?php
+																				include "koneksi.php";
+																				//$query="SELECT id_jabatan,Jabatan from jabatan order by id_jabatan";
+																				$sql=mysql_query($koneksi,"SELECT id_jabatan,Jabatan From jabatan order by id_jabatan");
+																				While ($kolom=mysql_fetch_array($sql))
+																					{echo "<option value='$kolom[Jabatan]'>$kolom[Jabatan]</option>";}
+																			?>">								</select>
 							</div>
 							<div class="form-group">
 								<input class="form-control" placeholder="Nama Pengguna" name="nama_pengguna" type="text" value="">

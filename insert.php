@@ -1,7 +1,7 @@
 <?php
 include"koneksi.php";
-$simpan=mysql_query("insert into opd 
-         values ('$_POST[nomor_polisi]',
+$simpan=mysqli_query($koneksi,"INSERT INTO opd 
+         VALUES ('$_POST[nomor_polisi]',
 				  '$_POST[nomor_rangka]',
 				  '$_POST[nomor_mesin]',
 				  '$_POST[tanggal_perolehan]',

@@ -97,9 +97,9 @@
 							<?php
   								include "koneksi.php";
 								$keyword=$_GET['qcari'];
-  								$tampil=mysql_query("SELECT * FROM opd WHERE opd_pengguna LIKE '%$keyword%' OR nomor_polisi LIKE '%$keyword%'");
+  								$tampil=mysqli_query($koneksi,"SELECT * FROM opd WHERE opd_pengguna LIKE '%$keyword%' OR nomor_polisi LIKE '%$keyword%'");
   								$no=1;
-  								while ($kolom=mysql_fetch_array($tampil))
+  								while ($kolom=mysqli_fetch_array($tampil))
   								{
   							?>
   							<tr>
